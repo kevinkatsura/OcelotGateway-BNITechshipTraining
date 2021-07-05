@@ -1,21 +1,16 @@
-
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using Ocelot.Cache.CacheManager;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using Microsoft.IdentityModel.Tokens;
 
-namespace OcelotGateway
+namespace Ocelot.Demo
 {
     public class Startup
     {
@@ -23,7 +18,7 @@ namespace OcelotGateway
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            /*var secret = "Sasageyo Sasageyo Shinzo Wo Sasageyo Sasageyo Sasageyo Shinzo Wo Sasageyo";
+            var secret = "Sasageyo Sasageyo Shinzo Wo Sasageyo Sasageyo Sasageyo Shinzo Wo Sasageyo";
             var key = Encoding.ASCII.GetBytes(secret);
             services.AddAuthentication(option => {
                 option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -38,8 +33,9 @@ namespace OcelotGateway
                     ValidateIssuer = false,
                     ValidateAudience = false
                 };
-            });*/
-            services.AddOcelot();
+            });
+
+            services.AddOcelot().AddCacheManager(settings => settings.WithDictionaryHandle());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +48,8 @@ namespace OcelotGateway
 
             app.UseRouting();
 
+            app.UseAuthentication();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context =>
@@ -59,6 +57,7 @@ namespace OcelotGateway
                     await context.Response.WriteAsync("Hello World!");
                 });
             });
+
 
             app.UseOcelot().Wait();
         }
