@@ -60,7 +60,7 @@
       "UpstreamPathTemplate": "/api/Users/Authentication",
       "UpstreamHttpMethod": [ "POST" ]
     },
-    //SERVICE STUDENTS  ALL DATA
+    //SERVICE STUDENTS ALL DATA
     {
       "DownstreamPathTemplate": "/api/Students",
       "DownstreamScheme": "https",
