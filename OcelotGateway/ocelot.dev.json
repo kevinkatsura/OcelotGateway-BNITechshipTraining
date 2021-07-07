@@ -28,7 +28,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Enrollments",
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamHttpMethod": [ "POST" ]
     },
     //SERVICE ENROLLMENTS BY ID
     {
