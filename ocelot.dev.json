@@ -2,7 +2,7 @@
   "Routes": [
     {
       "DownstreamPathTemplate": "/api/Enrollments",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "bnikel2-enrollments.azurewebsites.net",
@@ -18,7 +18,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/Enrollments/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "bnikel2-enrollments.azurewebsites.net",
@@ -34,7 +34,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/Users/Registration",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "bnikel2-auth.azurewebsites.net",
@@ -46,7 +46,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/Users/Authentication",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "bnikel2-auth.azurewebsites.net",
@@ -58,7 +58,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/Students",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "bnikel2-enrollments.azurewebsites.net",
@@ -74,7 +74,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/Students/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "bnikel2-enrollments.azurewebsites.net",
@@ -90,7 +90,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/Courses",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "bnikel2-enrollments.azurewebsites.net",
@@ -106,7 +106,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/Courses/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "bnikel2-enrollments.azurewebsites.net",
@@ -122,6 +122,6 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://bnikel2.azurewebsites.net"
+    "BaseUrl": "http://bnikel2.azurewebsites.net"
   }
 }
