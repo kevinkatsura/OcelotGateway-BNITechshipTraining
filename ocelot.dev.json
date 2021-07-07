@@ -10,7 +10,8 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Enrollments",
-      "UpstreamHttpMethod": [ "GET","POST" ],
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "SwaggerKey": "contacts",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
@@ -26,7 +27,8 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Enrollments/{id}",
-      "UpstreamHttpMethod": [ "GET","PUT","DELETE" ],
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "SwaggerKey": "contacts",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
@@ -42,7 +44,8 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Users/Registration",
-      "UpstreamHttpMethod": [ "POST" ]
+      "UpstreamHttpMethod": [ "POST" ],
+      "SwaggerKey": "contacts"
     },
     {
       "DownstreamPathTemplate": "/api/Users/Authentication",
@@ -54,7 +57,8 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Users/Authentication",
-      "UpstreamHttpMethod": [ "POST" ]
+      "UpstreamHttpMethod": [ "POST" ],
+      "SwaggerKey": "contacts"
     },
     {
       "DownstreamPathTemplate": "/api/Students",
@@ -67,6 +71,7 @@
       ],
       "UpstreamPathTemplate": "/api/Students",
       "UpstreamHttpMethod": [ "GET", "POST" ],
+      "SwaggerKey": "contacts",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
@@ -83,6 +88,7 @@
       ],
       "UpstreamPathTemplate": "/api/Students/{id}",
       "UpstreamHttpMethod": [ "PUT", "GET", "DELETE" ],
+      "SwaggerKey": "contacts",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
@@ -99,6 +105,7 @@
       ],
       "UpstreamPathTemplate": "/api/Courses",
       "UpstreamHttpMethod": [ "GET", "POST" ],
+      "SwaggerKey": "contacts",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
@@ -115,6 +122,7 @@
       ],
       "UpstreamPathTemplate": "/api/Courses/{id}",
       "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "SwaggerKey": "contacts",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
