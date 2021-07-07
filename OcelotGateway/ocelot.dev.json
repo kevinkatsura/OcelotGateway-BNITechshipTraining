@@ -1,6 +1,6 @@
 {
   "Routes": [
-    //SERVICE ENROLLMENTS
+    //SERVICE ENROLLMENTS GET
     {
       "DownstreamPathTemplate": "/api/Enrollments",
       "DownstreamScheme": "https",
@@ -11,7 +11,37 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Enrollments",
-      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    },
+    //SERVICE ENROLLMENTS POST
+    {
+      "DownstreamPathTemplate": "/api/Enrollments",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Enrollments",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    //SERVICE ENROLLMENTS BY ID
+    {
+      "DownstreamPathTemplate": "/api/Enrollments/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Enrollments/{id}",
+      "UpstreamHttpMethod": [ "GET" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
@@ -56,6 +86,19 @@
       "UpstreamPathTemplate": "/api/Students",
       "UpstreamHttpMethod": [ "POST", "GET", "PUT", "DELETE" ]
     },
+    //SERVICE STUDENTS BY ID
+    {
+      "DownstreamPathTemplate": "/api/Students/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Students/{id}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
     //SERVICE COURSES
     {
       "DownstreamPathTemplate": "/api/Courses",
@@ -68,6 +111,19 @@
       ],
       "UpstreamPathTemplate": "/api/Courses",
       "UpstreamHttpMethod": [ "POST", "GET", "PUT", "DELETE" ]
+    },
+    //SERVICE COURSES BY ID
+    {
+      "DownstreamPathTemplate": "/api/Courses/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Courses/{id}",
+      "UpstreamHttpMethod": [ "GET" ]
     }
   ],
   "GlobalConfiguration": {
