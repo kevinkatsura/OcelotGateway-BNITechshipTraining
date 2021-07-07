@@ -1,6 +1,6 @@
 {
   "Routes": [
-    //SERVICE ENROLLMENTS GET
+    //SERVICE ENROLLMENTS GET ALL DATA
     {
       "DownstreamPathTemplate": "/api/Enrollments",
       "DownstreamScheme": "https",
@@ -41,7 +41,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Enrollments/{id}",
-      "UpstreamHttpMethod": [ "GET" ],
+      "UpstreamHttpMethod": [ "GET","PUT","DELETE" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
