@@ -1,6 +1,6 @@
 {
   "Routes": [
-    //SERVICE ENROLLMENTS GET ALL DATA
+    //SERVICE ENROLLMENTS ALL DATA
     {
       "DownstreamPathTemplate": "/api/Enrollments",
       "DownstreamScheme": "https",
@@ -11,24 +11,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Enrollments",
-      "UpstreamHttpMethod": [ "GET" ],
+      "UpstreamHttpMethod": [ "GET","POST" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
       }
-    },
-    //SERVICE ENROLLMENTS POST
-    {
-      "DownstreamPathTemplate": "/api/Enrollments",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5001
-        }
-      ],
-      "UpstreamPathTemplate": "/api/Enrollments",
-      "UpstreamHttpMethod": [ "POST" ]
     },
     //SERVICE ENROLLMENTS GET BY ID
     {
@@ -73,7 +60,7 @@
       "UpstreamPathTemplate": "/api/Users/Authentication",
       "UpstreamHttpMethod": [ "POST" ]
     },
-    //SERVICE STUDENTS
+    //SERVICE STUDENTS  ALL DATA
     {
       "DownstreamPathTemplate": "/api/Students",
       "DownstreamScheme": "https",
@@ -99,7 +86,7 @@
       "UpstreamPathTemplate": "/api/Students/{id}",
       "UpstreamHttpMethod": [ "PUT","GET","DELETE" ]
     },
-    //SERVICE COURSES
+    //SERVICE COURSES ALL DATA
     {
       "DownstreamPathTemplate": "/api/Courses",
       "DownstreamScheme": "https",
