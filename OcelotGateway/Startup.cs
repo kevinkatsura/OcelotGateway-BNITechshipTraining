@@ -18,12 +18,14 @@ namespace Ocelot.Demo
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            var secret = "Sasageyo Sasageyo Shinzo Wo Sasageyo Sasageyo Sasageyo Shinzo Wo Sasageyo";
+            var secret = "dRgUkXp2r5u8x/A?D(G+KbPeShVmYq3t";
             var key = Encoding.ASCII.GetBytes(secret);
-            services.AddAuthentication(option => {
+            services.AddAuthentication(option =>
+            {
                 option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(options => {
+            }).AddJwtBearer(options =>
+            {
                 options.RequireHttpsMetadata = false;
                 options.SaveToken = true;
                 options.TokenValidationParameters = new TokenValidationParameters
