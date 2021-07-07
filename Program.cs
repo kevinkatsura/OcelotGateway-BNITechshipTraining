@@ -23,7 +23,7 @@ namespace Ocelot.Demo
                     var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
                     webBuilder.UseStartup<Startup>();
                     webBuilder.ConfigureAppConfiguration(config =>
-                        config.AddJsonFile($"ocelot.{env}.json"));
+                        config.AddJsonFile($"ocelot.dev.json"));
                 })
             .ConfigureLogging(logging => logging.AddConsole());
     }
