@@ -71,7 +71,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Students",
-      "UpstreamHttpMethod": [ "GET","POST" ]
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
     },
     //SERVICE STUDENTS BY ID
     {
@@ -84,7 +88,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Students/{id}",
-      "UpstreamHttpMethod": [ "PUT","GET","DELETE" ]
+      "UpstreamHttpMethod": [ "PUT", "GET", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
     },
     //SERVICE COURSES ALL DATA
     {
@@ -97,7 +105,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Courses",
-      "UpstreamHttpMethod": [ "GET", "POST" ]
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
     },
     //SERVICE COURSES BY ID
     {
@@ -110,7 +122,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Courses/{id}",
-      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
     }
   ],
   "GlobalConfiguration": {
