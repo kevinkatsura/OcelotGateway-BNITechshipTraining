@@ -130,6 +130,6 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://localhost:5021"
+    "BaseUrl": "https://bnikel2.azurewebsites.net"
   }
 }
