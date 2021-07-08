@@ -1,14 +1,3 @@
 {
-  "SwaggerEndPoints": [
-    {
-      "Key": "contacts",
-      "Config": [
-        {
-          "Name": "Contacts API",
-          "Version": "v1",
-          "Url": "https://bnikel2.azurewebsites.net/swagger/v1/swagger.json"
-        }
-      ]
-    }
-  ]
+  
 }

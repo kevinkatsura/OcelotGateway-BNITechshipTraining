@@ -16,7 +16,6 @@ namespace Ocelot.Demo
 {
     public class Startup
     {
-        private IConfiguration configuration;
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
@@ -42,7 +41,6 @@ namespace Ocelot.Demo
             });
 
             services.AddOcelot().AddCacheManager(settings => settings.WithDictionaryHandle());
-            services.AddSwaggerForOcelot(configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,11 +51,6 @@ namespace Ocelot.Demo
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseSwaggerForOcelotUI(opt =>
-            {
-                opt.PathToSwaggerGenerator = "/swagger/docs";
-            });
-
             app.UseRouting();
 
             app.UseAuthentication();
@@ -66,7 +59,7 @@ namespace Ocelot.Demo
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hello World!");
+                    await context.Response.WriteAsync("Struktur Cek Lewat Postman");
                 });
             });
 
