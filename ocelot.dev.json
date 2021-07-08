@@ -125,7 +125,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "bnikel2-enrollments.azurewebsites.net",
+          "Host": "bnikel2-auth.azurewebsites.net",
           "Port": 80
         }
       ],
