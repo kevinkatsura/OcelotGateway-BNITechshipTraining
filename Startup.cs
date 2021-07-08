@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
@@ -23,6 +24,7 @@ namespace Ocelot.Demo
         {
             var secret = "dRgUkXp2r5u8x/A?D(G+KbPeShVmYq3t";
             var key = Encoding.ASCII.GetBytes(secret);
+            string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
             services.AddAuthentication(option =>
             {
                 option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -39,6 +41,13 @@ namespace Ocelot.Demo
                     ValidateAudience = false
                 };
             });
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder => builder.AllowAnyOrigin()
+                                  .AllowAnyMethod()
+                                  .AllowAnyHeader());
+            });
 
             services.AddOcelot().AddCacheManager(settings => settings.WithDictionaryHandle());
         }
@@ -50,7 +59,7 @@ namespace Ocelot.Demo
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors(MyAllowSpecificOrigins);
             app.UseRouting();
 
             app.UseAuthentication();
@@ -65,6 +74,11 @@ namespace Ocelot.Demo
 
 
             app.UseOcelot().Wait();
+        }
+
+        private void MyAllowSpecificOrigins(CorsPolicyBuilder obj)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
