@@ -16,6 +16,7 @@ namespace Ocelot.Demo
 {
     public class Startup
     {
+        public string MyAllowSpecificOrigins { get; private set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
@@ -40,6 +41,14 @@ namespace Ocelot.Demo
                 };
             });
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder => builder.AllowAnyOrigin()
+                                  .AllowAnyMethod()
+                                  .AllowAnyHeader());
+            });
+
             services.AddOcelot().AddCacheManager(settings => settings.WithDictionaryHandle());
         }
 
@@ -50,6 +59,8 @@ namespace Ocelot.Demo
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseRouting();
 
