@@ -121,30 +121,6 @@
       }
     },
     {
-      "DownstreamPathTemplate": "/api/Users/Registration",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "bnikel2-enrollments.azurewebsites.net",
-          "Port": 80
-        }
-      ],
-      "UpstreamPathTemplate": "/api/Users/Registration",
-      "UpstreamHttpMethod": [ "POST" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/Users/Authentication",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "bnikel2-enrollments.azurewebsites.net",
-          "Port": 80
-        }
-      ],
-      "UpstreamPathTemplate": "/api/Users/Authentication",
-      "UpstreamHttpMethod": [ "POST" ]
-    },
-    {
       "DownstreamPathTemplate": "/api/Users/UpdatePassword",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
