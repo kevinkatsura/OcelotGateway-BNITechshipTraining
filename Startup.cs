@@ -50,14 +50,6 @@ namespace Ocelot.Demo
                                   .AllowAnyHeader());
             });
 
-            services.AddCors(options =>
-            {
-                options.AddPolicy(name: MyAllowSpecificOrigins,
-                                  builder => builder.AllowAnyOrigin()
-                                  .AllowAnyMethod()
-                                  .AllowAnyHeader());
-            });
-
             services.AddOcelot().AddCacheManager(settings => settings.WithDictionaryHandle());
         }
 
@@ -83,11 +75,6 @@ namespace Ocelot.Demo
 
 
             app.UseOcelot().Wait();
-        }
-
-        private void MyAllowSpecificOrigins(CorsPolicyBuilder obj)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }
