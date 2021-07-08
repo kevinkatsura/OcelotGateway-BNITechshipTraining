@@ -73,6 +73,22 @@
       }
     },
     {
+      "DownstreamPathTemplate": "/api/Students/search/{keyword}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "bnikel2-enrollments.azurewebsites.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Students/search/{keyword}",
+      "UpstreamHttpMethod": [ "GET"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    },
+    {
       "DownstreamPathTemplate": "/api/Students/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -115,6 +131,22 @@
       ],
       "UpstreamPathTemplate": "/api/Courses/{id}",
       "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Courses/search/{keyword}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "bnikel2-enrollments.azurewebsites.net",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Courses/search/{keyword}",
+      "UpstreamHttpMethod": [ "GET"],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
