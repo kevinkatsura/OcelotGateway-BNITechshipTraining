@@ -17,15 +17,14 @@ namespace Ocelot.Demo
 {
     public class Startup
     {
-        public string MyAllowSpecificOrigins { get; private set; }
-
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
             var secret = "dRgUkXp2r5u8x/A?D(G+KbPeShVmYq3t";
             var key = Encoding.ASCII.GetBytes(secret);
-            string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+            
             services.AddAuthentication(option =>
             {
                 option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -60,9 +59,9 @@ namespace Ocelot.Demo
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseCors(MyAllowSpecificOrigins);
+            
             app.UseRouting();
-
+            app.UseCors(MyAllowSpecificOrigins);
             app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
